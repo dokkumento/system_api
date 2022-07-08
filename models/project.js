@@ -1,12 +1,12 @@
-// const Document = require('./document.js')
+// v0.0.4
 
 class Project {
-  constructor(owner, title, structure = []) {
-    this.owner = owner
+  constructor(user_id, title, structure = "", projectId = null) {
+    this.user_id = user_id
     this.admins = []
     this.title = title
-    this.structure = structure
-    this.projectId = this._generateProjectId(title)
+    this.structure = structure.split("|")
+    this.projectId = (projectId === null) ? this._generateProjectId(title) : projectId
   }
 
   _generateProjectId(title) {
@@ -22,12 +22,12 @@ class Project {
     return out
   }
 
-  getOwner() {
-    return this.owner
+  getUserId() {
+    return this.user_id
   }
 
-  setOwner(newOwner) {
-    this.owner = newOwner
+  setUserId(newUserId) {
+    this.user_id = newUserId
   }
 
   getAdmins() {

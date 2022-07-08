@@ -1,8 +1,11 @@
+// v0.0.2
+
 class Document {
-  constructor(title, contents, path = "") {
+  constructor(title, contents, path = "", projectId) {
     this.title = title
     this.contents = contents
     this.path = path
+    this.projectId = projectId
   }
 
   setTitle(newTitle) {
@@ -27,6 +30,14 @@ class Document {
 
   getPath() {
     return this.path
+  }
+
+  setProjectId(newProjectId) {
+    this.projectId = newProjectId
+  }
+
+  getProjectId() {
+    return this.projectId
   }
 
   isDocument() {
