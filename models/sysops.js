@@ -1,6 +1,13 @@
 const { exec } = require("child_process")
 
 class Sysops {
+  createProject() {
+
+  }
+
+  updateFiles() {
+
+  }
   __execCmd(cmd) {
     exec(cmd, (error, stdout, stderr) => {
       if (error) {
